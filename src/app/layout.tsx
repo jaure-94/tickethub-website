@@ -35,7 +35,7 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <body
-          className={`${kanit.variable} ${poppins.variable} ${pacifico.variable} h-screen flex justify-center items-center antialiased`}
+          className={`${kanit.variable} ${poppins.variable} ${pacifico.variable} antialiased`}
         >
           <SignedOut>
             <SignIn routing="hash" />
