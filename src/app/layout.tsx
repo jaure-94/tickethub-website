@@ -37,13 +37,9 @@ export default function RootLayout({
         <body
           className={`${kanit.variable} ${poppins.variable} ${pacifico.variable} antialiased`}
         >
-          <SignedOut>
-            <SignIn routing="hash" />
-          </SignedOut>
           
-          <SignedIn>
             {children}
-          </SignedIn>
+          
         </body>
       </html>
     </ClerkProvider>

@@ -2,7 +2,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { FC } from 'react'
 import logo from '@/assets/images/logo.svg'
-import { UserButton } from '@clerk/nextjs'
+import { SignedOut, UserButton } from '@clerk/nextjs'
+import { Button } from '../ui/button'
 
 type Props = {}
 
@@ -16,9 +17,14 @@ const Header: FC = (props: Props) => {
 
         <UserButton showName />
 
-        {/* <div className="flex w-32 justify-end gap-3">
-          <div></div>
-        </div> */}
+        <div className="flex w-32 justify-end gap-3">
+          <SignedOut>
+            <Button asChild className="rounded-full" size="lg">
+              <Link href="/sign-in">
+              Login</Link>
+            </Button>
+          </SignedOut>
+        </div>
       </div>
     </header>
   )
