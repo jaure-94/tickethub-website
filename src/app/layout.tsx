@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Pacifico, Kanit, Poppins } from "next/font/google";
 import "./globals.css";
+import { ClerkProvider, SignedIn, SignedOut, SignIn } from "@clerk/nextjs";
 
 const kanit = Kanit({
   variable: "--font-kanit",
@@ -31,12 +32,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${kanit.variable} ${poppins.variable} ${pacifico.variable} antialiased`}
-      >
-        {children}
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en">
+        <body
+          className={`${kanit.variable} ${poppins.variable} ${pacifico.variable} h-screen flex justify-center items-center antialiased`}
+        >
+          <SignedOut>
+            <SignIn routing="hash" />
+          </SignedOut>
+          
+          <SignedIn>
+            {children}
+          </SignedIn>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
