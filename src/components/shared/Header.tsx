@@ -2,8 +2,10 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { FC } from 'react'
 import logo from '@/assets/images/logo.svg'
-import { SignedOut, UserButton } from '@clerk/nextjs'
-import { Button } from '../ui/button'
+import { SignedIn, SignedOut, UserButton } from '@clerk/nextjs'
+import { Button } from '@/components/ui/button'
+import NavItems from '@/components/shared/NavItems'
+import MobileNav from '@/components/shared/MobileNav'
 
 type Props = {}
 
@@ -15,9 +17,14 @@ const Header: FC = (props: Props) => {
           <Image src={logo} alt="TicketHub Logo" width={128} height={38} />
         </Link>
 
-        <UserButton showName />
+        <nav className="md:flex-between hidden w-full max-w-xs">
+          <NavItems />
+        </nav>
 
         <div className="flex w-32 justify-end gap-3">
+          <SignedIn>
+            <UserButton />
+          </SignedIn>
           <SignedOut>
             <Button asChild className="rounded-full" size="lg">
               <Link href="/sign-in">
@@ -25,6 +32,7 @@ const Header: FC = (props: Props) => {
               </Link>
             </Button>
           </SignedOut>
+          <MobileNav />
         </div>
       </div>
     </header>

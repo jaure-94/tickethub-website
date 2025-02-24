@@ -32,14 +32,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
+    <ClerkProvider afterSignOutUrl="/">
       <html lang="en">
         <body
           className={`${kanit.variable} ${poppins.variable} ${pacifico.variable} antialiased`}
         >
-          
             {children}
-          
         </body>
       </html>
     </ClerkProvider>
