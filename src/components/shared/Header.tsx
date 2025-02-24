@@ -21,7 +21,8 @@ const Header: FC = (props: Props) => {
           <SignedOut>
             <Button asChild className="rounded-full" size="lg">
               <Link href="/sign-in">
-              Login</Link>
+                Login
+              </Link>
             </Button>
           </SignedOut>
         </div>
