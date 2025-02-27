@@ -12,6 +12,7 @@ const EventsSection: FC = (props: Props) => {
       <div className="flex w-full flex-col gap-5 md:flex-row lg:flex-row xl:flex-row">
         Search
         CategoryFilter
+        EventList
       </div>
     </section>
   )
