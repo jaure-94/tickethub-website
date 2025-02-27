@@ -22,16 +22,21 @@ const MobileNav: FC = (props: Props) => {
           <Image
             src={menu}
             alt="Menu Icon"
-            width={24}
-            height={24}
+            width={34}
+            height={34}
             className="cursor-pointer"
           />
         </SheetTrigger>
 
-        <SheetContent className="flex flex-col gap-6 bg-white md:hidden">
-          <h2 className="text-2xl font-bold">TH</h2>
-          <hr className="border border-gray-100" />
-          <NavItems />
+        <SheetContent className="bg-white md:hidden max-w-sm">
+          <div className="flex flex-col justify-between h-full">
+            <div className="flex flex-col gap-6">
+              <h2 className="text-2xl font-bold">TH</h2>
+              <hr className="border border-gray-100" />
+              <NavItems />
+            </div>
+            <p className="text-xs text-gray-500">&copy; TicketHub ZW - 2025</p>
+          </div>
         </SheetContent>
       </Sheet>
     </nav>

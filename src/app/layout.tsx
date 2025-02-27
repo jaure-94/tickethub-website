@@ -6,7 +6,7 @@ import { ClerkProvider, SignedIn, SignedOut, SignIn } from "@clerk/nextjs";
 const kanit = Kanit({
   variable: "--font-kanit",
   subsets: ["latin"],
-  weight: ['400', '500', '600', '700']
+  weight: ['100', '300', '400', '500', '600', '700', '800', '900']
 });
 
 const pacifico = Pacifico({
