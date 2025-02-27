@@ -6,7 +6,7 @@ type Props = {}
 
 const HomePage: FC = (props: Props) => {
   return ( 
-    <section className="bg-stone-50 wrapper py-10 md:py-16 lg:py-24">
+    <section className="bg-stone-50 wrapper xs:py-12 sm:py-16 md:py-20 lg:py-24">
       <div className="grid grid-cols-1 gap-5 md:grid-cols-2 2xl:gap-0">
         <div className="flex flex-col justify-center gap-10 md:gap-16">
           <h1 className="text-3xl md:text-3xl lg:text-5xl xl:text-6xl font-bold leading-10 md:leading-normal lg:leading-normal">
@@ -15,7 +15,7 @@ const HomePage: FC = (props: Props) => {
           <p className="p-regular-20">
             Book your ticket with us and stand a chance to win!
           </p>
-          <Button size="lg" asChild className="rounded-full h-14 text-base font-normal leading-6 w-full sm:w-fit">
+          <Button size="lg" asChild className="rounded-full h-14 text-base text-white hover:bg-transparent hover:text-black border-[3px] border-orange-500 hover:transition-all hover:duration-700 font-normal leading-6 w-full sm:w-fit bg-orange-500">
             <Link href="#events">
               Explore Our Events
             </Link>
