@@ -12,17 +12,17 @@ const NavItems: FC = (props: Props) => {
 
   return (
     <ul className="flex flex-col md:flex-between w-full items-start gap-5 md:flex-row">
-      {headerLinks.map((link) => {
-        const isActive = pathname === link.route
+      {headerLinks.map(({ label, route }) => {
+        const isActive = pathname === route
 
         return (
           <li
-            key={link.route}
+            key={route}
             className={`${
               isActive && "text-orange-700"
-            } flex-center p-medium-16 whitespace-nowrap`}
+            } flex-center p-medium-16 whitespace-nowrap group/nav-item`}
             >
-            <Link href={link.route}>{link.label}</Link>
+            <Link href={route}>{label}</Link>
           </li>
         )
       })}
