@@ -1,7 +1,7 @@
 import { Webhook } from 'svix'
 import { headers } from 'next/headers'
 import { clerkClient, WebhookEvent } from '@clerk/nextjs/server'
-import { createUser } from '@/lib/actions/user.actions'
+import { createUser, deleteUser, updateUser } from '@/lib/actions/user.actions'
 import { NextResponse } from 'next/server'
 
 export async function POST(req: Request) {
@@ -11,7 +11,7 @@ export async function POST(req: Request) {
     throw new Error('Error: Please add SIGNING_SECRET from Clerk Dashboard to .env or .env')
   }
 
-  // Create new Svix instance with secret
+  // Create new svix instance with secret
   const wh = new Webhook(SIGNING_SECRET)
 
   // Get headers
@@ -83,5 +83,30 @@ export async function POST(req: Request) {
     return NextResponse.json({ message: 'OK', user: newUser })
   }
 
-  return new Response('Webhook received', { status: 200 })
+  if (eventType === 'user.updated') {
+    const { id, image_url, first_name, last_name, username } = evt.data
+
+    const user = {
+      username: username!,
+      firstName: first_name!,
+      lastName: last_name!,
+      photo: image_url
+    }
+
+    // update existing database user
+    const updatedUser = await updateUser(id, user)
+
+    return NextResponse.json({ message: 'OK', user: updatedUser })
+  }
+
+  if (eventType === 'user.deleted') {
+    const { id } = evt.data
+
+    // delete existing user
+    const deletedUser = await deleteUser(id!)
+
+    return NextResponse.json({ message: 'OK', user: deletedUser })
+  }
+
+  return new Response('', { status: 200 })
 }
