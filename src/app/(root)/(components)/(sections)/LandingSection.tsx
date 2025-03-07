@@ -4,9 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import hero from '@/assets/images/hero.png'
 
-type Props = {}
-
-const LandingSection: FC = (props: Props) => {
+const LandingSection: FC = () => {
   return (
     <section className="bg-stone-50 wrapper xs:py-12 sm:py-16 md:py-16 lg:py-16">
       <div className="grid grid-cols-1 gap-5 md:grid-cols-2 2xl:gap-0">

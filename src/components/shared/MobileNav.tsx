@@ -2,19 +2,16 @@ import { FC } from 'react'
 import {
   Sheet,
   SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
+  // SheetDescription,
+  // SheetHeader,
+  // SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet"
 import Image from 'next/image'
 import menu from "@/assets/icons/menu.svg"
 import NavItems from './NavItems'
 
-
-type Props = {}
-
-const MobileNav: FC = (props: Props) => {
+const MobileNav: FC = () => {
   return (
     <nav className="md:hidden">
       <Sheet>

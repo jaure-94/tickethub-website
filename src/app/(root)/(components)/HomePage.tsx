@@ -2,9 +2,7 @@ import { FC } from 'react'
 import LandingSection from './(sections)/LandingSection'
 import EventsSection from './(sections)/EventsSection'
 
-type Props = {}
-
-const HomePage: FC = (props: Props) => {
+const HomePage: FC = () => {
   return ( 
     <>
       <LandingSection />

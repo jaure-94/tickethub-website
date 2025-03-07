@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Pacifico, Kanit, Poppins } from "next/font/google";
 import "./globals.css";
-import { ClerkProvider, SignedIn, SignedOut, SignIn } from "@clerk/nextjs";
+import { ClerkProvider } from "@clerk/nextjs";
 
 const kanit = Kanit({
   variable: "--font-kanit",

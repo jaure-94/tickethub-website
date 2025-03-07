@@ -5,9 +5,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { FC } from 'react'
 
-type Props = {}
-
-const NavItems: FC = (props: Props) => {
+const NavItems: FC = () => {
   const pathname = usePathname();
 
   return (

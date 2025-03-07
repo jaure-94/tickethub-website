@@ -1,8 +1,6 @@
 import { FC } from 'react'
 
-type Props = {}
-
-const page: FC = (props: Props) => {
+const page: FC = () => {
   return (
     <div>page</div>
   )

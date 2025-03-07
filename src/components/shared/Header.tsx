@@ -7,9 +7,7 @@ import { Button } from '@/components/ui/button'
 import NavItems from '@/components/shared/NavItems'
 import MobileNav from '@/components/shared/MobileNav'
 
-type Props = {}
-
-const Header: FC = (props: Props) => {
+const Header: FC = () => {
   return (
     <header className="w-full border-b">
       <div className="wrapper flex items-center justify-between">

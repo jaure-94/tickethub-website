@@ -1,9 +1,7 @@
 import Link from 'next/link'
 import { FC } from 'react'
 
-type Props = {}
-
-const Footer: FC = (props: Props) => {
+const Footer: FC = () => {
   return (
     <footer className="wrapper flex py-10 flex-between flex-col md:flex-row gap-5 items-center border-t">
       <Link href="/">
