@@ -1,4 +1,4 @@
-// ====== USER PARAMS
+// ====== USER PARAMS - properties being passed from webhook
 export type CreateUserParams = {
   clerkId: string
   firstName: string
